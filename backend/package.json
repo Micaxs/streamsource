@@ -1,0 +1,30 @@
+{
+  "name": "streamapi",
+  "version": "1.0.0",
+  "description": "API Backend for controlling broadcasts and streams.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Stream",
+    "API",
+    "Backend",
+    "RTMP",
+    "VOD",
+    "HLS"
+  ],
+  "author": "Tijl",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "get-video-info": "^1.0.0",
+    "moment": "^2.22.2",
+    "mysql": "^2.16.0",
+    "request": "^2.88.0",
+    "shelljs": "^0.8.3",
+    "systeminformation": "^3.50.2"
+  }
+}
