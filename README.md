@@ -1,2 +1,7 @@
 # streamsource
-A Project with rtmp streaming, Nodejs and Angular8.
+A simple project to make streaming available to companies and organizations to stream their provided content.
+
+- Angular8
+- NodeJS
+- NGINX
+- Bash
