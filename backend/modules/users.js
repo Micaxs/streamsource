@@ -69,7 +69,6 @@ function register(req, res) {
     connection.query('SELECT * FROM streaming.users WHERE email = ?', [email], (error, results, fields) => {
         if (error) { return fn.mysqlError(error, res); }
         if (results.length > 0) {
-            console.log('Account exsits!', results, results.length);
             return res.status(400).json({
                 'error': 'Account with email already exists!'
             });
