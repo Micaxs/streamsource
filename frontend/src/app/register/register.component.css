@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap');
+
+
+.registerHead {
+    position: relative;
+    top: 150px;
+    width: 500px;
+    height: 80px;
+    margin: 0 auto;
+    background: url('../../assets/banners/dashboard.png') no-repeat center center;
+    font-family: 'Baloo Bhai', cursive;
+    font-size: 42px;
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.registerBody {
+    position: relative;
+    top: 150px;
+    width: 500px;
+    margin: 0 auto;
+    color: white;
+    background: rgba(15,15,15,0.3);
+    padding-top: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.registerIntro {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.registerInput {
+    width: 100%;
+    height: 45px;
+    background: none;
+    border: none;
+    border-bottom: 1px dashed rgba(15,15,15,0.3);
+    outline: none;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.registerBtn {
+    margin-top: 15px;
+    width: 50%;
+    border: none;
+    height: 50px;
+    border-bottom-left-radius: 10px;
+    background: rgba(5,5,5,0.5);
+    font-weight: bold;
+    color: grey;
+    outline:none;
+}
+.registerBtn:hover {
+    background: rgba(196, 255, 142, 0.5);
+    color: white;
+}
+.backBtn {
+    width: 50%;
+    border: none;
+    height: 50px;
+    border-bottom-right-radius: 10px;
+    background: rgba(5,5,5,0.3);
+    color: grey;
+    outline:none;
+}
+.backBtn:hover {
+    background: rgba(247, 127, 118, 0.5);
+    color: white;
+}
+.error > p {
+    color: rgba(247, 99, 99, 0.5);
+    text-align: center;
+}
+.success > p {
+    color: rgba(99, 247, 106, 0.5);
+    text-align: center;
+}
+
+.fifty {
+    width: 50%;
+    display: inline-block;
+}
+
+
+.registerInput option {
+    margin: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    outline: none;
+}

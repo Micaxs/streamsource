@@ -1,0 +1,106 @@
+<div class="loginHead">Login</div>
+
+<div class="loginBody">
+    <p class="loginIntro">Welcome to the Streaming Engine Platform.</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="loginForm">
+        <div class="form-group">
+            <div class="loginSpacer" *ngIf="!loginForm.controls['username'].touched"></div>
+            <div class="loginError" *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched"></div>
+            <div class="loginOK" *ngIf="!loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched"></div>
+            <input class="loginInput" type="text" formControlName="username" id="username" autocomplete="off" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <div class="loginSpacer" *ngIf="!loginForm.controls['password'].touched"></div>
+            <div class="loginError" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched"></div>
+            <div class="loginOK" *ngIf="!loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched"></div>
+            <input type="password" class="loginInput" formControlName="password" id="password" autocomplete="off" placeholder="Password">
+        </div>
+
+        <div *ngIf="invalidLogin" class="error">
+            <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Invalid credentials. Please try again.</p>
+        </div>
+
+        <button class="loginBtn" [disabled]="loginForm.invalid">Login</button>
+        <button class="registerBtn" (click)="register()">Create account</button>
+    </form>
+
+
+</div>
+
+
+<!--
+
+
+
+
+
+        <h1 class="loginTitle">Login</h1>
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="loginForm">
+                <div class="form-group">
+                    <div class="loginSpacer" *ngIf="!loginForm.controls['username'].touched"></div>
+                    <div class="loginError" *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched"></div>
+                    <div class="loginOK" *ngIf="!loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched"></div>
+                    <input class="loginInput" type="text" formControlName="username" id="username" autocomplete="off" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <div class="loginSpacer" *ngIf="!loginForm.controls['password'].touched"></div>
+                    <div class="loginError" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched"></div>
+                    <div class="loginOK" *ngIf="!loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched"></div>
+                    <input type="password" class="loginInput" formControlName="password" id="password" autocomplete="off" placeholder="Password">
+                </div>
+
+                <button class="loginBtn" [disabled]="loginForm.invalid">Login</button>
+                <button class="registerBtn" [disabled]="loginForm.invalid">Register</button>
+
+                <div *ngIf="invalidLogin" class="error">
+                    <div>Invalid user or password. Please try again.</div>
+                </div>
+
+            </form>
+
+    </div>
+
+-->
+
+
+
+
+
+
+<!--
+
+    <div class="row">
+        <div class="col-md-6">
+            <h2 style="margin: auto">Please Login</h2>
+            <h3 *ngIf='message'>
+                {{message}}
+            </h3>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" formControlName="username" id="username" autocomplete="off">
+                    <div class="error"
+                        *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched">
+                        Please enter an username!</div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" formControlName="password" id="password"
+                        autocomplete="off">
+                    <div class="error"
+                        *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">
+                        Please enter a password!</div>
+                </div>
+
+                <button class="btn btn-success" [disabled]="loginForm.invalid">Login</button>
+                <div *ngIf="invalidLogin" class="error">
+                    <div>Invalid user or password. Please try again.</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+-->

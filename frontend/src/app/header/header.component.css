@@ -1,0 +1,167 @@
+.bg-header-dashboard {
+    position: absolute;
+    width: 100%;
+    min-height: 240px;
+    background: url('../../assets/banners/dashboard.png') no-repeat;
+    background-position-x: center;
+    background-position-y: -80px;
+    background-size: 100%;
+    overflow: hidden;
+}
+.bg-header-events {
+    position: absolute;
+    width: 100%;
+    min-height: 240px;
+    background: url('../../assets/banners/events.png') no-repeat;
+    background-position-x: center;
+    background-position-y: -80px;
+    background-size: 100%;
+    overflow: hidden;
+}
+.bg-header-postprocess {
+    position: absolute;
+    width: 100%;
+    min-height: 240px;
+    background: url('../../assets/banners/postprocess.png') no-repeat;
+    background-position-x: center;
+    background-position-y: -80px;
+    background-size: 100%;
+    overflow: hidden;
+}
+.bg-header-users {
+    position: absolute;
+    width: 100%;
+    min-height: 240px;
+    background: url('../../assets/banners/users.png') no-repeat;
+    background-position-x: center;
+    background-position-y: -80px;
+    background-size: 100%;
+    overflow: hidden;
+}
+.bg-header-player {
+    position: absolute;
+    width: 100%;
+    min-height: 240px;
+    background: url('../../assets/banners/player.png') no-repeat;
+    background-position-x: center;
+    background-position-y: -80px;
+    background-size: 100%;
+    overflow: hidden;
+}
+
+
+
+
+
+
+.header-overlay {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    background-image: linear-gradient(135deg, #000000 8.33%, rgba(255,255,255,0) 8.33%, rgba(255,255,255,0) 50%, #000000 50%, #000000 58.33%, rgba(255,255,255,0) 58.33%, rgba(255,255,255,0) 100%);
+    background-size: 8.49px 8.49px;
+    opacity: 0.30;
+    pointer-events:none;
+    overflow: hidden;
+}
+
+.pageTitle h1 {
+    position: relative;
+    padding-top: 55px;
+    z-index: 51;
+    color: white;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0px 9px 9px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 0px 9px 9px 0px rgba(0,0,0,0.45);
+    box-shadow: 0px 9px 9px 0px rgba(0,0,0,0.45);
+    margin: 0;
+    z-index: 10;
+}
+
+
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav > li {
+    display: inline;
+    padding-right: 65px;
+    margin-top: 15px;
+}
+
+.side {
+    color: white;
+    padding-right: 35px !important;
+}
+
+.side a:hover {
+    color: rgba(119, 0, 255, 1);
+    cursor: pointer;
+}
+
+a {
+    color: white;
+}
+
+
+.dashboard-link:hover {
+    color: rgb(196, 196, 196);
+    text-decoration: none;
+}
+.events-link:hover {
+    color: rgb(48, 221, 252);
+    text-decoration: none;
+}
+.process-link:hover {
+    color: rgb(48, 252, 109);
+    text-decoration: none;
+}
+.users-link:hover {
+    color: rgb(252, 215, 48);
+    text-decoration: none;
+}
+.integrate-link:hover {
+    color: rgb(252, 72, 48);
+    text-decoration: none;
+}
+
+
+
+
+
+@media screen and (max-width: 1919px) {
+    .bg-header-dashboard {
+        background-position-x: center;
+        background-position-y: -80px;
+    }
+}
+
+@media screen and (max-width: 755px) {
+    .header-overlay {
+        height: 0;
+    }
+    .pageTitle {
+        padding-top: 10px;
+    }
+}
+
+@media screen and (max-width: 1055px) {
+    .side {
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 913px) {
+    .header-overlay, .header, .nav, .pageTitle {
+        display: none;
+    }
+}

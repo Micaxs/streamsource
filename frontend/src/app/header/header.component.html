@@ -1,0 +1,42 @@
+<div [ngClass]="{
+    'bg-header-dashboard': headingBackgroundClass === 'header-bg-dashboard',
+    'bg-header-events': headingBackgroundClass === 'header-bg-events',
+    'bg-header-postprocess': headingBackgroundClass === 'header-bg-postprocess',
+    'bg-header-users': headingBackgroundClass === 'header-bg-users',
+    'bg-header-player': headingBackgroundClass === 'header-bg-player'
+  }">
+
+    <div class="header-overlay"></div>
+
+    <div class="header">
+
+        <div class="displayContainer">
+
+            <div  style="float: left;">
+                <ul class="nav">
+                    <li><a routerLink="/dashboard" class="dashboard-link">Dashboard</a></li>
+                    <li><a routerLink="/events" class="events-link">Streaming Events</a></li>
+                    <li><a routerLink="/postprocess" class="process-link">Post Processing</a></li>
+                    <li><a routerLink="/users" class="users-link">User Management</a></li>
+                    <li><a routerLink="/player" class="integrate-link">Webintegration</a></li>
+                </ul>
+            </div>
+
+            <div style="float: right;" class="greeting">
+                <ul class="nav">
+                    <li class="side">{{ greeting }}</li>
+                    <li class="side"><a (click)="logout()">Logout</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="pageTitle">
+        <div class="displayContainer">
+            <h1>{{ pageTitle }}</h1>
+        </div>
+    </div>
+
+</div>
