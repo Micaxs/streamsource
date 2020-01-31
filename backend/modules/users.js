@@ -46,25 +46,9 @@ function login(req, res) {
 }
 
 
-function check_account_exists(email) {
-    connection.query('SELECT * FROM streaming.users WHERE email = ?', [email], (error, results, fields) => {
-        if (error) {
-            return false;
-        } 
-        if (results.length > 0) {
-            return false;
-        } else {
-            return true;
-        }
-    });
-
-}
-
-
-
 function register(req, res) {
     // Registration fields
-    let email = req.body.email;
+    let email = String(req.body.email);
     let password = req.body.password;
     let token = req.body.token;
     let hashed_password = crypto.createHmac('sha256', priv_encryption_key).update(password).digest('hex');
@@ -75,61 +59,47 @@ function register(req, res) {
     let last_ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
     // Check required fields being filled in.
-    if (!email || !password || !token || !last_ip ) {
+    if (!email || !password || !token || !last_ip) {
         return res.status(400).json({
             'error': 'Invalid fields specified.'
         });
     }
 
     // check if account exists with email
-    if(!check_account_exists()) {
-        return res.status(400).json({
-            'error': 'Account with email already exists!'
-        });
-    }
-
-
-    // Process Registration
-    connection.query('SELECT * FROM streaming.authorization WHERE registration_key = ?', [token], (error, results, fields) => {
-        if (error) {
-            res.status(500).send({
-                "code": 500,
-                "failed": "MySQL Error Occurred."
-            });
-            console.log(error);
-            return;
-        }
+    connection.query('SELECT * FROM streaming.users WHERE email = ?', [email], (error, results, fields) => {
+        if (error) { return fn.mysqlError(error, res); }
         if (results.length > 0) {
-            // Check if registration token is valid.
-            const authorization = results[0];
-            if (moment(authorization.valid_until) < moment()) {
-                return res.status(403).json({
-                    'error': 'Invalid registration token specified!'
-                });
-            }
-
-
-
-
-            connection.query('INSERT INTO users (email, password, first_name, last_name, phone, country, last_ip, authid) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [email, hashed_password, firstname, lastname, phone, country, last_ip, authorization.id], (error, result) => {
-                if (error) {
-                    console.log(error);
-                    return res.status(500).json({
-                        "code": 500,
-                        "failed": "MySQL Error Occurred."
-                      }); 
-                }
-                return res.status(201).json({
-                    "message": "Successfully created your account! Your license is valid until " + moment(authorization.valid_until).format()
-                });
+            console.log('Account exsits!', results, results.length);
+            return res.status(400).json({
+                'error': 'Account with email already exists!'
             });
         } else {
-            return res.status(401).json({
-                'error': 'Invalid token.'
+            // Process Registration
+            connection.query('SELECT * FROM streaming.authorization WHERE registration_key = ?', [token], (error, results, fields) => {
+                if (error) { return fn.mysqlError(error, res); }
+                if (results.length > 0) {
+                    // Check if registration token is valid.
+                    const authorization = results[0];
+                    if (moment(authorization.valid_until) < moment()) {
+                        return res.status(403).json({
+                            'error': 'Your registration token has expired!'
+                        });
+                    } else {
+                        connection.query('INSERT INTO users (email, password, first_name, last_name, phone, country, last_ip, authid) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [email, hashed_password, firstname, lastname, phone, country, last_ip, authorization.id], (error, result) => {
+                            if (error) { return fn.mysqlError(error, res); }
+                            return res.status(201).json({
+                                "message": "Successfully created your account! Your license is valid until " + moment(authorization.valid_until).format()
+                            });
+                        });
+                    }
+                } else {
+                    return res.status(401).json({
+                        'error': 'Invalid registration token specified.'
+                    });
+                }
             });
         }
     });
-
 }
 
 
