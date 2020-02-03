@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from './../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ export class EventsService {
   header: any;
 
   constructor(private http: HttpClient) {
-    this.url = 'http://mica.pw:3000';
+    this.url = environment.apiEndpoint;
     this.token = JSON.parse(localStorage.getItem('token'));
 
     const headerSettings: { [name: string]: string | string[]; } = { 'Content-Type': 'application/json', 'Authorization': this.token };
