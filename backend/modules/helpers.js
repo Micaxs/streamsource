@@ -3,7 +3,7 @@ const fs = require('fs');
 const crypto = require('crypto');
 
 const token_key = 'JZ8%NXkaAaGgMzgz6X7pGA4%#+NUu8@w';
-
+const str_split = '|&#!*|';
 
 function log(context) {
   console.log('[StreamAPI] ', context);

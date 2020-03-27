@@ -2,6 +2,43 @@
 
 <div class="content">
 
-    events: {{ ownEvents }} {{ allEvents }}
+    <div class="events-head">
+        <p>
+            <span class="left"><i class="fa fa-server" aria-hidden="true"></i> Hosted streams</span>
+            <span class="right">
+                <button class="events-btn filter" [hidden]="ownEvents.length === 0"><i class="fa fa-filter"
+                        aria-hidden="true"></i>Filter List</button>
+                <button class="events-btn create-new"><i class="fa fa-plus" aria-hidden="true"></i>Create New</button>
+            </span>
+        </p>
+    </div>
+
+    <table class="events-table" [hidden]="ownEvents.length === 0">
+        <thead>
+            <tr class="event-row">
+                <th width="75px" style="text-align: left;"><i class="fa fa-info" aria-hidden="true"></i></th>
+                <th width="80px">ID</th>
+                <th width="150px">Date</th>
+                <th width="175px">Time</th>
+                <th>Event Name</th>
+                <th width="175px" style="text-align: right;">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ownEvent of ownEvents; let index=index; let odd=odd;" [ngClass]="odd ? 'odd' : 'even'" (click)="clickedEvent(ownEvent.id)">
+                <div class="event-row">
+                    <td [innerHTML]="ownEvent.type" width="75px"></td>
+                    <td>{{ ownEvent.id }}</td>
+                    <td width="150px">{{ ownEvent.date }}</td>
+                    <td width="175px" [innerHTML]="ownEvent.time"></td>
+                    <td>{{ ownEvent.eventname }}</td>
+                    <td width="175px" style="text-align: right;">{{ ownEvent.status }}</td>
+                </div>
+            </tr>
+        </tbody>
+    </table>
+    <div class="no-events" [hidden]="ownEvents.length > 0">There are currently no streaming events to be displayed.
+    </div>
+
 
 </div>

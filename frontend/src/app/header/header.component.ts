@@ -48,24 +48,26 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    switch (this.router.url) {
-      case '/dashboard':
+    let url = this.router.url;
+    url = url.split('/')[1];
+    switch (url) {
+      case 'dashboard':
         this.pageTitle = 'Dashboard';
         this.headingBackgroundClass = 'header-bg-dashboard';
         break;
-      case '/events':
+      case 'events':
         this.pageTitle = 'Streaming Events';
         this.headingBackgroundClass = 'header-bg-events';
         break;
-      case '/postprocess':
+      case 'postprocess':
         this.pageTitle = 'Post Processing';
         this.headingBackgroundClass = 'header-bg-postprocess';
         break;
-      case '/users':
+      case 'users':
         this.pageTitle = 'User Management';
         this.headingBackgroundClass = 'header-bg-users';
         break;
-      case '/player':
+      case 'player':
         this.pageTitle = 'Webintegration';
         this.headingBackgroundClass = 'header-bg-player';
         break;

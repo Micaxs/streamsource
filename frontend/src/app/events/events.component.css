@@ -1,0 +1,117 @@
+.events-head {
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.events-head > p {
+    color: rgba(255,255,255,0.4);
+    width: 1730px;
+    margin: 0 auto;
+    font-size: 16px;
+    padding-top: 17px;
+}
+
+.events-btn {
+    margin-top: -17px;
+    height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+}
+
+.events-btn > .fa {
+    margin-right: 7px;
+    outline: none;
+}
+
+.filter:hover {
+    background: rgba(0,0,0,0.1);
+    color: rgb(252, 215, 48);
+}
+
+.create-new:hover {
+    background: rgba(0,0,0,0.1);
+    color: rgb(48, 252, 109);
+}
+
+.event-icon {
+    font-size: 36px;
+}
+
+.events-table {
+    width: 100%;
+}
+
+.events-table > thead {
+    background: rgba(0,0,0,0.2);
+    color: rgba(255,255,255,0.8);
+}
+/*
+.events-table tr {
+    display: table;
+    width: 1730px;
+    margin: 0 auto;
+}
+*/
+
+.events-table > thead > tr > th {
+    padding: 10px 0px;
+}
+
+.events-table > tbody > tr > div > td {
+    padding: 10px 0px;
+    height: 70px;
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.events-table > tbody > tr:hover > div > td {
+    color: rgba(255,255,255,0.8);
+}
+
+.no-events {
+    padding-top: 35px;
+    width: 1730px;
+    margin: 0 auto;
+    text-align: center;
+    color: rgb(48, 221, 252);
+    font-size: 16px;
+}
+
+.event-row {
+    display: table;
+    width: 1730px;
+    margin: 0 auto;
+}
+
+.odd {
+    background: rgba(0,0,0,0.05);
+    border-bottom: 1px dashed rgba(255,255,255,0.05);
+}
+.even {
+    background: rgba(0,0,0,0.1);
+    border-bottom: 1px dashed rgba(255,255,255,0.05);
+}
+
+.event-action {
+    font-size: 22px;
+    padding-left: 15px;
+}
+.event-action:hover {
+    cursor: pointer;
+}
+
+.event-clone:hover {
+    color: rgb(48, 221, 252);
+}
+.event-delete:hover {
+    color: rgb(252, 72, 48);
+}
+.event-open:hover {
+    color: rgb(48, 252, 109);
+}

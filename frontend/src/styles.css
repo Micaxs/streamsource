@@ -17,6 +17,17 @@ body {
     top: 240px;
 }
 
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+
+button {
+    outline: none !important;
+}
+
 @media screen and (max-width: 1730px) {
     .displayContainer {
         width: 100%;

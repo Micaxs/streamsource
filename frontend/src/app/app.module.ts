@@ -15,6 +15,7 @@ import { PostprocessComponent } from './postprocess/postprocess.component';
 import { UsersComponent } from './users/users.component';
 import { PlayerComponent } from './player/player.component';
 import { RegisterComponent } from './register/register.component';
+import { EventsDetailsComponent } from './events-details/events-details.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { RegisterComponent } from './register/register.component';
     PostprocessComponent,
     UsersComponent,
     PlayerComponent,
-    RegisterComponent
+    RegisterComponent,
+    EventsDetailsComponent
   ],
   imports: [
     BrowserModule,

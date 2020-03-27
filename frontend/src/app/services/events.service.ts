@@ -16,7 +16,7 @@ export class EventsService {
     this.url = environment.apiEndpoint;
     this.token = JSON.parse(localStorage.getItem('token'));
 
-    const headerSettings: { [name: string]: string | string[]; } = { 'Content-Type': 'application/json', 'Authorization': this.token };
+    const headerSettings: { [name: string]: string | string[]; } = { 'Content-Type': 'application/json', 'authorization': this.token };
     this.header = new HttpHeaders(headerSettings);
   }
 
