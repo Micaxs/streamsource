@@ -266,6 +266,8 @@ app.post('/cb/push', cb.push);                          // POST '/cb/push'
 
 
 // Route: '/events' (Authentication Required)
+app.get('/check/:token', users.checkAlive);
+
 app.all('/events/*', users.check_token);
 
 app.get('/events', events.get_streams);                 // GET '/events'

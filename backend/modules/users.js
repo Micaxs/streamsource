@@ -119,7 +119,29 @@ function userdata(req, res) {
     }
 }
 
-
+function checkAlive(req, res) {
+    let token = req.params.token;
+    if (token && token !== null && token !== 'null') {
+        let un_token = fn.decrypt(token);
+        let tokenParts = un_token.split(str_split);
+        let now = moment();
+        let end = moment(tokenParts[tokenParts.length - 1]);
+        let duration = moment.duration(now.diff(end));
+        let nrOfHoursSince = duration.asHours();
+        if (nrOfHoursSince > 6) {
+            return res.status(401).json({
+                'error': 'Token expired, tokens are only valid for 6 hours after login before timed out!',
+                'type': 'timedout'
+            });
+        } else {
+            return res.status(200).json({ 'status':'ok' });
+        }
+    } else {
+        return res.status(401).json({
+            'error': 'Unauthorized'
+        });
+    }
+}
 
 /**
  * Check for a valid token within the Authorization header.
@@ -152,5 +174,6 @@ module.exports = {
     login: login,
     register: register,
     check_token: check_token,
-    userdata: userdata
+    userdata: userdata,
+    checkAlive: checkAlive
 }

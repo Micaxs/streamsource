@@ -149,6 +149,10 @@
     transition: .4s;
   }
   
+  input:checked + .slider {
+    background-color: rgba(14, 14, 14,0.7);
+  }
+/*
   input:checked + .published {
     background-color: rgb(48, 252, 109);
   }
@@ -158,7 +162,7 @@
   input:checked + .encoding {
     background-color: rgb(48, 221, 252);
   }
-  
+  */
   input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);

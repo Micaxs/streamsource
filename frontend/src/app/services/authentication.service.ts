@@ -16,7 +16,7 @@ export class AuthenticationService {
     this.url = environment.apiEndpoint;
     this.token = JSON.parse(localStorage.getItem('token'));
 
-    const headerSettings: { [name: string]: string | string[]; } = { 'Content-Type': 'application/json', 'authorization': '123' };
+    const headerSettings: { [name: string]: string | string[]; } = { 'Content-Type': 'application/json' };
     this.header = new HttpHeaders(headerSettings);
   }
 
@@ -24,14 +24,19 @@ export class AuthenticationService {
     return this.http.post<any>(this.url + '/login', model, { headers: this.header });
   }
 
-  userdata(token: string) {
-    let headerSettings = { 'Content-Type': 'application/json', 'Authorization': token };
+  userdata(key: string) {
+    let headerSettings = { 'Content-Type': 'application/json', 'Authorization': key };
     this.header = new HttpHeaders(headerSettings);
     return this.http.get<any>(this.url + '/userdata', { headers: this.header });
   }
 
   register(model: any) {
     return this.http.post<any>(this.url + '/register', model, { headers: this.header });
+  }
+
+  check() {
+    let token = JSON.parse(localStorage.getItem('token'));
+    return this.http.get<any>(this.url + '/check/'+token);
   }
 
 }
