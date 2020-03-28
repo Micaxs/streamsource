@@ -72,15 +72,15 @@ function get_streams(req, res) {
 }
 
 
-// GET '/events/:streamkey' -- Retrieve a single event
+// GET '/events/:id' -- Retrieve a single event
 function get_stream(req, res) {
-    let streamkey = req.params.streamkey;
-    connection.query('SELECT * FROM streams WHERE streamkey = ?', [streamkey], (error, result, fields) => {
+    let id = req.params.id;
+    connection.query('SELECT * FROM streams WHERE id = ?', [id], (error, result, fields) => {
         if (error) { return fn.mysqlError(error, res); }
         if (result.length > 0) {
             return res.status(200).json(result);
         } else {
-            return res.status(404).json({ 'error': 'Not found.' });
+            return res.status(404).json({ 'error': 'Not found!' });
         }
     });
 }

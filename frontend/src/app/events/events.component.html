@@ -25,7 +25,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let ownEvent of ownEvents; let index=index; let odd=odd;" [ngClass]="odd ? 'odd' : 'even'" (click)="clickedEvent(ownEvent.id)">
+            <tr *ngFor="let ownEvent of ownEvents; let index=index; let odd=odd;" [ngClass]="odd ? 'odd' : 'even'"
+                (click)="clickedEvent(ownEvent.id)">
                 <div class="event-row">
                     <td [innerHTML]="ownEvent.type" width="75px"></td>
                     <td>{{ ownEvent.id }}</td>

@@ -1,0 +1,200 @@
+.event-head {
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.event-head > p {
+    color: rgba(255,255,255,0.4);
+    width: 1730px;
+    margin: 0 auto;
+    font-size: 16px;
+    padding-top: 17px;
+}
+
+.event-content {
+    width: 1730px;
+    margin: 0 auto;
+}
+
+.b-left {
+    margin-top: 15px;
+    width: 1000px;
+}
+.b-right {
+    margin-top: 15px;
+    width: 715px;
+}
+
+.rounded-box {
+    width: 100%;
+    background: rgba(0,0,0,0.1);
+    /*border-radius: 5px;*/
+    padding: 15px;
+    color: white;
+}
+
+.rounded-box > h2 > .fa {
+    padding-right: 7px;
+}
+
+.rounded-box > h2 {
+    font-size: 16px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.m-top {
+    margin-top: 15px;
+}
+
+.inner-box {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.15);
+    display: table;
+    line-height: 30px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+.line {
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 0;
+    font-size: 12px;
+}
+
+.nl {
+    border-bottom: none !important;
+    padding-bottom: 0px;
+}
+
+.l {
+    display: block;
+    float: left;
+    font-weight: bold;
+    color: rgba(255,255,255,0.7);
+    width: 30%;
+}
+.r {
+    display: block;
+    width: 70%;
+    float: right;
+}
+
+/* Controls */
+.cline {
+    display: inline-block;
+    width: 100%;
+    /*border-bottom: 1px solid rgba(255,255,255,0.05);*/
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 12px;
+}
+.cl {
+    display: block;
+    float: left;
+    font-weight: bold;
+    color: rgba(255,255,255,0.7);
+    width: 30%;
+}
+.cr {
+    display: block;
+    width: 70%;
+    float: right;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.2);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgba(255,255,255);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .published {
+    background-color: rgb(48, 252, 109);
+  }
+  input:checked + .recording {
+    background-color: rgb(252, 72, 48);
+  }
+  input:checked + .encoding {
+    background-color: rgb(48, 221, 252);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+
+
+
+
+
+
+
+  .video-container {
+    /* width is set as 100% here. any width can be specified as per requirement */
+    width: 100%;
+    padding-top: 56.25%;
+    height: 0px;
+    position: relative;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+}

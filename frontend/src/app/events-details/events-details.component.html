@@ -2,4 +2,104 @@
 
 <div class="content">
 
+    <div class="event-head">
+        <p>
+            <span class="left"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i> {{ eventData.eventname }}</span>
+            <!--<span class="right">
+                <button class="events-btn filter" [hidden]="ownEvents.length === 0"><i class="fa fa-filter"
+                        aria-hidden="true"></i>Filter List</button>
+                <button class="events-btn create-new"><i class="fa fa-plus" aria-hidden="true"></i>Create New</button>
+            </span>-->
+        </p>
     </div>
+
+    <div class="event-content">
+
+        <div class="left b-left">
+            <div class="rounded-box">
+                <h2>Stream preview</h2>
+
+                <div class="video-container">
+                    <video class="video" controls>
+                        <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080">
+                    </video>
+               </div>
+
+            </div>
+        </div>
+
+        <div class="right b-right">
+            <div class="rounded-box">
+                <h2>Controls</h2>
+
+                <div class="inner-box">
+                    <div class="cline">
+                        <div class="cl">Encoding:</div>
+                        <div class="cr">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider encoding "></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="cline">
+                        <div class="cl">Recording:</div>
+                        <div class="cr">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider recording "></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="cline nl">
+                        <div class="cl">Published:</div>
+                        <div class="cr">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider published "></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rounded-box m-top">
+                <h2>Event Information</h2>
+
+                <div class="inner-box">
+                    <div class="line">
+                        <div class="l">ID:</div>
+                        <div class="r">{{ eventData.id }}</div>
+                    </div>
+                    <div class="line">
+                        <div class="l">Event Name:</div>
+                        <div class="r">{{ eventData.eventname }}</div>
+                    </div>
+                    <div class="line">
+                        <div class="l">Streamkey:</div>
+                        <div class="r">{{ eventData.streamkey }}</div>
+                    </div>
+                    <div class="line">
+                        <div class="l">Type:</div>
+                        <div class="r">{{ eventData.type }}</div>
+                    </div>
+                    <div class="line nl">
+                        <div class="l">Status:</div>
+                        <div class="r">{{ eventData.status }}</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Social Media Streaming Component 
+            <div class="rounded-box m-top">
+                <h2>Social Media Integration</h2>
+                <p>Module not activated, please contact sales.</p>
+            </div>
+        -->
+        </div>
+
+    </div>
+
+
+</div>

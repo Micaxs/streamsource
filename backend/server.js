@@ -269,7 +269,7 @@ app.post('/cb/push', cb.push);                          // POST '/cb/push'
 app.all('/events/*', users.check_token);
 
 app.get('/events', events.get_streams);                 // GET '/events'
-app.get('/events/:streamkey', events.get_stream);       // GET '/events/:streamkey'
+app.get('/events/:id(\\d+)/', events.get_stream);       // GET '/events/:streamkey'
 app.get('/events/owned', events.get_for_user);          // GET '/events/owned'
 app.post('/events', events.create_event);               // POST '/events'
 app.put('/events/:id', events.edit_event);              // PUT '/events/:id'
